@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="290" viewBox="0 0 1200 290" role="img" aria-labelledby="title desc">
+<title id="title">Manahil Iftikhar</title><desc id="desc">Python, Machine Learning and Applied AI. From data exploration to reproducible experiments.</desc>
+<rect width="1200" height="290" rx="18" fill="#132c3c"/>
+<rect x="0" y="0" width="12" height="290" fill="#55c9bb"/>
+<path d="M930 0H1200V290H1040Z" fill="#1c3b4c"/>
+<circle cx="1090" cy="82" r="35" fill="none" stroke="#55c9bb" stroke-width="2"/>
+<circle cx="1015" cy="187" r="13" fill="#55c9bb"/>
+<circle cx="1150" cy="218" r="20" fill="none" stroke="#a69ae7" stroke-width="2"/>
+<path d="M1069 110L1024 174M1028 190L1130 214M1104 114L1142 198" fill="none" stroke="#4c6e80" stroke-width="2"/>
+<text x="60" y="56" fill="#55c9bb" font-family="Arial,sans-serif" font-size="16" font-weight="700" letter-spacing="3">PYTHON / MACHINE LEARNING / APPLIED AI</text>
+<text x="56" y="139" fill="#ffffff" font-family="Arial,sans-serif" font-size="64" font-weight="700">Manahil Iftikhar</text>
+<text x="60" y="188" fill="#d4e0e7" font-family="Arial,sans-serif" font-size="23">From data exploration to reproducible experiments.</text>
+<text x="60" y="247" fill="#a6becb" font-family="Arial,sans-serif" font-size="17">PREDICTIVE MODELLING   ·   NLP   ·   EXPERIMENT DESIGN</text>
+</svg>
