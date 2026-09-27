@@ -17,16 +17,18 @@ My portfolio brings together reproducible Python workflows, baseline comparisons
 
 | Project | What it demonstrates | Current scope |
 | --- | --- | --- |
-| [YouTube Metadata Explorer](https://github.com/Manahil-Iftikhar/YoutubeTitlePredictor) | Django forms, API integration, responsive results, error handling, and automated checks | Includes a local offline demo with fictional records and no YouTube API key; live queries require a key. Historical ML experiments remain separate |
-| [Collaborative Editing System](https://github.com/Manahil-Iftikhar/collaborative-editing-system) | Java 17, Spring Boot services, API gateway routing, document updates, and version snapshots | Local REST prototype; live synchronization and resource authorization are future work |
+| [YouTube Metadata Explorer](https://github.com/Manahil-Iftikhar/YoutubeTitlePredictor) | Django forms, API integration, offline demo, and a reproducible ML baseline with recorded results | Local demo needs no YouTube API key; live search requires one. The small-data ML model underperformed its baseline, with results and limitations documented |
+| [Collaborative Editing System](https://github.com/Manahil-Iftikhar/collaborative-editing-system) | Java 17, Spring Boot services, JWT authentication, owner-only resource access, and automated tests | Local REST prototype with protected profile, document, and version APIs. Live synchronization, full browser integration, and production hardening remain future work |
 
 ## Start exploring
 
 - **Data storytelling:** [Iris exploration](https://github.com/Manahil-Iftikhar/developershub-aiml-internship-tasks-2025/blob/main/docs/projects/01-iris-exploration.md) — measurements, distributions, and visual findings from a small reference dataset.
 - **End-to-end machine learning:** [Synthetic churn pipeline](https://github.com/Manahil-Iftikhar/DevelopersHub-AI-ML-Internship-Assignment-2/blob/main/docs/projects/02-churn-pipeline.md) — preprocessing, validation-based model selection, and recorded test results.
 - **Applied NLP:** [Document assistant](https://github.com/Manahil-Iftikhar/DevelopersHub-AI-ML-Internship-Assignment-2/blob/main/docs/projects/04-context-assistant.md) — a retrieval prototype with source inspection and conversation state.
-
 - **Try a web application:** [YouTube offline demo setup](https://github.com/Manahil-Iftikhar/YoutubeTitlePredictor/blob/main/docs/DEVELOPMENT.md#keyless-offline-demo) — run the Django app locally and explore clearly labelled fictional examples without a YouTube API key.
+
+- **Evaluate an experiment:** [YouTube engagement baseline](https://github.com/Manahil-Iftikhar/YoutubeTitlePredictor/tree/main/experiments) — reproducible data preparation, a publication-date holdout, and an honest comparison with a simple baseline.
+- **Inspect backend access controls:** [Collaborative editing architecture](https://github.com/Manahil-Iftikhar/collaborative-editing-system/blob/main/docs/ARCHITECTURE.md) — authenticated identity, document ownership, and service boundaries.
 
 ## Technical interests
 
