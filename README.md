@@ -47,4 +47,4 @@ My portfolio brings together reproducible Python workflows, baseline comparisons
 
 Each repository explains its current implementation and what is required to reproduce it. Original internship submissions are distinguished from subsequent portfolio improvements.
 
-[Browse my repositories](https://github.com/Manahil-Iftikhar?tab=repositories)
+[Browse my repositories](https://github.com/Manahil-Iftikhar?tab=repositories) · [Development roadmap](PORTFOLIO_ROADMAP.md)
