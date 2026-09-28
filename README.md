@@ -18,7 +18,7 @@ My portfolio brings together reproducible Python workflows, baseline comparisons
 | Project | What it demonstrates | Current scope |
 | --- | --- | --- |
 | [YouTube Metadata Explorer](https://github.com/Manahil-Iftikhar/YoutubeTitlePredictor) | Django forms, API integration, offline demo, and a reproducible ML baseline with recorded results | Local demo needs no YouTube API key; live search requires one. The small-data ML model underperformed its baseline, with results and limitations documented |
-| [Collaborative Editing System](https://github.com/Manahil-Iftikhar/collaborative-editing-system) | Java 17, Spring Boot services, JWT authentication, owner-only resource access, and real-service gateway integration tests | Local REST prototype with protected profile, document, and version APIs. Live synchronization, full browser integration, and production hardening remain future work |
+| [Collaborative Editing System](https://github.com/Manahil-Iftikhar/collaborative-editing-system) | Java 17, Spring Boot services, JWT authentication, owner-only resource access, and real-service HTTP/Chromium integration tests | Local REST prototype with protected profile, document, and version APIs. A Chromium editor workflow is tested; broader browser coverage, live synchronization, and production hardening remain future work |
 
 ## Start exploring
 
@@ -35,7 +35,7 @@ My portfolio brings together reproducible Python workflows, baseline comparisons
 | --- | --- | --- |
 | [Synthetic churn pipeline](https://github.com/Manahil-Iftikhar/DevelopersHub-AI-ML-Internship-Assignment-2/blob/main/docs/projects/02-churn-pipeline.md#measured-portfolio-run--2026-09-24) | Held-out ROC-AUC **0.7186**, compared with **0.5000** for the majority baseline | Demonstrates evaluation on generated data; not evidence of real customer performance |
 | [YouTube engagement experiment](https://github.com/Manahil-Iftikhar/YoutubeTitlePredictor/blob/main/experiments/README.md#recorded-result) | Published metrics and predictions for a **12-row test set**; ridge underperformed the median baseline | A documented negative result, with dataset and forecasting limitations explained |
-| [Java service integration](https://github.com/Manahil-Iftikhar/collaborative-editing-system#real-service-integration-evidence) | **67 declared Java tests** plus a passing gateway smoke workflow using all four real services | Checks owner access and identity-service outage behavior; browser interaction and concurrent editing remain unverified |
+| [Java service integration](https://github.com/Manahil-Iftikhar/collaborative-editing-system#real-service-integration-evidence) | **67 declared Java tests** plus passing HTTP and Chromium smoke checks using all four real services | Checks owner access, identity-service outages, and one browser editing flow; other browsers and concurrent editing remain unverified |
 
 ## Technical interests
 
