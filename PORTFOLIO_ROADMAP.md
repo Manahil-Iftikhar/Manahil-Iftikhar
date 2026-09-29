@@ -9,7 +9,7 @@ Status reviewed: **September 29, 2026**. This is a development plan, not a claim
 | Project | Completed and inspectable | Evidence |
 | --- | --- | --- |
 | AI/ML foundations | Six maintained notebooks, preserved originals, a measured UCI Cleveland case study, reusable utilities, offline tests and CI | [Verification record](https://github.com/Manahil-Iftikhar/developershub-aiml-internship-tasks-2025/blob/main/docs/VERIFICATION.md) |
-| Advanced AI/ML | Five maintained notebooks, reusable components, synthetic-churn evaluation, real-model ticket-tagging diagnostics, project guides, offline tests and CI | [Verification record](https://github.com/Manahil-Iftikhar/DevelopersHub-AI-ML-Internship-Assignment-2/blob/main/docs/VERIFICATION.md) |
+| Advanced AI/ML | Five maintained notebooks, reusable components, five-seed synthetic-churn evaluation, reproducible lexical retrieval evidence, real-model ticket-tagging diagnostics, project guides, offline tests and CI | [Verification record](https://github.com/Manahil-Iftikhar/DevelopersHub-AI-ML-Internship-Assignment-2/blob/main/docs/VERIFICATION.md) |
 | YouTube Metadata Explorer | Repaired Django workflow, keyless fictional demo, separate reproducible engagement experiment, web and ML CI | [Verification summary](https://github.com/Manahil-Iftikhar/YoutubeTitlePredictor#verification-at-a-glance) |
 | Collaborative Editing System | JWT authentication, owner-only APIs, external signing configuration, disabled database consoles, guarded snapshot numbers, optimistic document revisions, transactional change history, and real-service HTTP/Chromium checks | [Architecture and roadmap](https://github.com/Manahil-Iftikhar/collaborative-editing-system/blob/main/docs/ARCHITECTURE.md) |
 
@@ -43,6 +43,18 @@ At source commit `deb291a092d10e51d9d5660698304e9ac96a930a`, [Java checks](https
 
 This completes the targeted consistency milestone. Document saves and snapshots remain separate operations; snapshot revert does not update current document content. Automatic text merging, cross-service atomicity, production-database behavior and load capacity remain outside the verified scope. See the [architecture](https://github.com/Manahil-Iftikhar/collaborative-editing-system/blob/main/docs/ARCHITECTURE.md) and [API recovery instructions](https://github.com/Manahil-Iftikhar/collaborative-editing-system/blob/main/docs/API.md#document-revision-precondition).
 
+## Completed milestone: retrieval baseline and evidence verification
+
+[PR #3](https://github.com/Manahil-Iftikhar/DevelopersHub-AI-ML-Internship-Assignment-2/pull/3) adds an authored six-document, 12-question TF-IDF diagnostic. The correct source ranks first for all eight answerable questions, but three of four unanswerable questions still receive context. [PR #4](https://github.com/Manahil-Iftikhar/DevelopersHub-AI-ML-Internship-Assignment-2/pull/4) makes CI reproduce the corpus hash, settings, rankings, scores and metrics without overwriting the report. The [case study](https://github.com/Manahil-Iftikhar/DevelopersHub-AI-ML-Internship-Assignment-2/blob/main/docs/projects/04-context-assistant.md#recorded-offline-retrieval-baseline) includes every retrieved passage and the limits of this small diagnostic.
+
+This completes the lexical baseline and reproducibility check. It does not execute MiniLM, FAISS or answer generation; an independent evaluation set and model-backed comparison remain future work.
+
+## Completed milestone: churn sensitivity across seeds
+
+[PR #5](https://github.com/Manahil-Iftikhar/DevelopersHub-AI-ML-Internship-Assignment-2/pull/5) repeats the unchanged workflow with five predeclared split-and-estimator seeds on one fixed synthetic dataset. Mean test ROC-AUC is **0.7352** (sample standard deviation **0.0114**), with range **0.7186–0.7492**. Validation selects logistic regression four times and random forest once. All 7,045 exported test predictions were checked against the reported metrics.
+
+The [case study](https://github.com/Manahil-Iftikhar/DevelopersHub-AI-ML-Internship-Assignment-2/blob/main/docs/projects/02-churn-pipeline.md#five-seed-sensitivity-study--2026-09-29) publishes the protocol, individual results and reproduction command. [Hosted checks](https://github.com/Manahil-Iftikhar/DevelopersHub-AI-ML-Internship-Assignment-2/actions/runs/36613595908) passed with 25 offline tests and retrieval-report verification; the five training runs were a separate local experiment. Overlapping holdouts are correlated, and sample standard deviation is not a confidence interval or evidence of real-customer performance.
+
 ## Next development milestones
 
 These are proposed priorities, with a concrete completion criterion for each.
@@ -56,12 +68,12 @@ Browser verification is distinct from the existing HTTP smoke test. A model-back
 
 ## Research directions after the next milestones
 
-- **Churn:** test stability across seeds and study classification thresholds on validation data; label all simulated results as synthetic.
+- **Churn:** extend the completed seed study to new data-generation assumptions and study classification thresholds on separate validation data; label all simulated results as synthetic.
 - **YouTube ML:** obtain a larger dataset with observation times and video identifiers before making forecasting claims; retain the current negative result as evidence.
 - **Housing:** establish a measured tabular baseline before introducing a paired-image model.
 - **BERT:** publish held-out evaluation and representative errors before claiming classification quality.
 - **Ticket tagging:** agree on a consistent label policy and collect an independent evaluation set before revising the classifier; retain the current negative result.
-- **Document assistant:** measure retrieval relevance and answer grounding, including cases where the system should abstain.
+- **Document assistant:** compare the embedding retriever against the published lexical baseline on an independent labelled set; evaluate answer grounding and abstention separately.
 - **Support chatbot:** distinguish pretrained inference from actual fine-tuning and evaluate the intended behavior before expanding its scope.
 
 ## Completion standard
