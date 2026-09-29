@@ -9,7 +9,7 @@ Status reviewed: **September 29, 2026**. This is a development plan, not a claim
 | Project | Completed and inspectable | Evidence |
 | --- | --- | --- |
 | AI/ML foundations | Six maintained notebooks, preserved originals, a measured UCI Cleveland case study, reusable utilities, offline tests and CI | [Verification record](https://github.com/Manahil-Iftikhar/developershub-aiml-internship-tasks-2025/blob/main/docs/VERIFICATION.md) |
-| Advanced AI/ML | Five maintained notebooks, reusable components, synthetic-churn evaluation, project guides, offline tests and CI | [Verification record](https://github.com/Manahil-Iftikhar/DevelopersHub-AI-ML-Internship-Assignment-2/blob/main/docs/VERIFICATION.md) |
+| Advanced AI/ML | Five maintained notebooks, reusable components, synthetic-churn evaluation, real-model ticket-tagging diagnostics, project guides, offline tests and CI | [Verification record](https://github.com/Manahil-Iftikhar/DevelopersHub-AI-ML-Internship-Assignment-2/blob/main/docs/VERIFICATION.md) |
 | YouTube Metadata Explorer | Repaired Django workflow, keyless fictional demo, separate reproducible engagement experiment, web and ML CI | [Verification summary](https://github.com/Manahil-Iftikhar/YoutubeTitlePredictor#verification-at-a-glance) |
 | Collaborative Editing System | JWT authentication, owner-only APIs, external signing configuration, disabled database consoles, Java tests and real-service HTTP/Chromium checks | [Architecture and roadmap](https://github.com/Manahil-Iftikhar/collaborative-editing-system/blob/main/docs/ARCHITECTURE.md) |
 
@@ -27,16 +27,23 @@ This completes the initial browser milestone for one desktop Chromium workflow. 
 
 [The case study](https://github.com/Manahil-Iftikhar/developershub-aiml-internship-tasks-2025/blob/main/docs/projects/03-heart-disease.md) links full metrics and held-out predictions. All 13 local offline tests and [hosted CI](https://github.com/Manahil-Iftikhar/developershub-aiml-internship-tasks-2025/actions/runs/36469803224) passed; the maintained notebook executed locally. The original internship dataset and scores remain separate. This completes the initial external-data milestone, not external-site or clinical validation.
 
+## Completed milestone: model-backed NLP diagnostic evaluation
+
+[Advanced portfolio pull request #2](https://github.com/Manahil-Iftikhar/DevelopersHub-AI-ML-Internship-Assignment-2/pull/2) adds a real CPU evaluation of a pinned FLAN-T5-small revision on 15 declared synthetic tickets. Both unchanged prompt modes matched **3 of 15** reference answers, equal to a constant-label baseline. Zero-shot returned Login Problem for every ticket; few-shot also failed to improve exact match.
+
+[The case study](https://github.com/Manahil-Iftikhar/DevelopersHub-AI-ML-Internship-Assignment-2/blob/main/docs/projects/05-ticket-tagging.md) publishes every raw response, reference labels, model revision, data hash, package versions and runtime. All 19 offline tests and [hosted CI](https://github.com/Manahil-Iftikhar/DevelopersHub-AI-ML-Internship-Assignment-2/actions/runs/36501003791) passed. CI tests the utilities; the real inference was a separate local run.
+
+This completes the evaluation milestone, not a tagging-quality target. The small synthetic sample, project-defined labels and mismatch between the reference policy and existing few-shot examples limit interpretation. A larger independently labelled set and a consistent label policy are needed before assessing a revised classifier.
+
 ## Next development milestones
 
 These are proposed priorities, with a concrete completion criterion for each.
 
 | Priority | Milestone | What completion means | Prerequisite |
 | --- | --- | --- | --- |
-| 1 | Evaluate one model-backed NLP workflow | Pin model revision and data provenance; run a declared evaluation set; record outputs, failures, runtime and resource use | Compatible model environment, weights and suitable evaluation data |
-| 2 | Strengthen Java consistency | Define save/snapshot and revert semantics; test concurrent writes and prevent conflicting version numbers | A documented consistency design |
-| 3 | Validate live YouTube search | Run a small, documented integration check with real provider responses and sanitized evidence | An owner-provided API key and available quota |
-| 4 | Prepare a deployment candidate | Establish persistent storage, restricted origins, protected service transport, dependency review and deployment checks for the selected application | A chosen deployment target and operational configuration |
+| 1 | Strengthen Java consistency | Define save/snapshot and revert semantics; test concurrent writes and prevent conflicting version numbers | A documented consistency design |
+| 2 | Validate live YouTube search | Run a small, documented integration check with real provider responses and sanitized evidence | An owner-provided API key and available quota |
+| 3 | Prepare a deployment candidate | Establish persistent storage, restricted origins, protected service transport, dependency review and deployment checks for the selected application | A chosen deployment target and operational configuration |
 
 Browser verification is distinct from the existing HTTP smoke test. A model-backed run is distinct from offline tests using mocked retrieval or generation. A public deployment is a separate milestone from successful local execution.
 
@@ -45,7 +52,8 @@ Browser verification is distinct from the existing HTTP smoke test. A model-back
 - **Churn:** test stability across seeds and study classification thresholds on validation data; label all simulated results as synthetic.
 - **YouTube ML:** obtain a larger dataset with observation times and video identifiers before making forecasting claims; retain the current negative result as evidence.
 - **Housing:** establish a measured tabular baseline before introducing a paired-image model.
-- **BERT and ticket tagging:** publish held-out evaluation and representative errors before claiming classification quality.
+- **BERT:** publish held-out evaluation and representative errors before claiming classification quality.
+- **Ticket tagging:** agree on a consistent label policy and collect an independent evaluation set before revising the classifier; retain the current negative result.
 - **Document assistant:** measure retrieval relevance and answer grounding, including cases where the system should abstain.
 - **Support chatbot:** distinguish pretrained inference from actual fine-tuning and evaluate the intended behavior before expanding its scope.
 
