@@ -11,7 +11,7 @@ Status reviewed: **September 29, 2026**. This is a development plan, not a claim
 | AI/ML foundations | Six maintained notebooks, preserved originals, a measured UCI Cleveland case study, reusable utilities, offline tests and CI | [Verification record](https://github.com/Manahil-Iftikhar/developershub-aiml-internship-tasks-2025/blob/main/docs/VERIFICATION.md) |
 | Advanced AI/ML | Five maintained notebooks, reusable components, synthetic-churn evaluation, real-model ticket-tagging diagnostics, project guides, offline tests and CI | [Verification record](https://github.com/Manahil-Iftikhar/DevelopersHub-AI-ML-Internship-Assignment-2/blob/main/docs/VERIFICATION.md) |
 | YouTube Metadata Explorer | Repaired Django workflow, keyless fictional demo, separate reproducible engagement experiment, web and ML CI | [Verification summary](https://github.com/Manahil-Iftikhar/YoutubeTitlePredictor#verification-at-a-glance) |
-| Collaborative Editing System | JWT authentication, owner-only APIs, external signing configuration, disabled database consoles, Java tests and real-service HTTP/Chromium checks | [Architecture and roadmap](https://github.com/Manahil-Iftikhar/collaborative-editing-system/blob/main/docs/ARCHITECTURE.md) |
+| Collaborative Editing System | JWT authentication, owner-only APIs, external signing configuration, disabled database consoles, guarded snapshot numbers, optimistic document revisions, transactional change history, and real-service HTTP/Chromium checks | [Architecture and roadmap](https://github.com/Manahil-Iftikhar/collaborative-editing-system/blob/main/docs/ARCHITECTURE.md) |
 
 The profile, project guides, setup instructions, and evidence links now provide the core portfolio presentation. Further changes should add reproducibility, measured results, or useful functionality.
 
@@ -35,15 +35,22 @@ This completes the initial browser milestone for one desktop Chromium workflow. 
 
 This completes the evaluation milestone, not a tagging-quality target. The small synthetic sample, project-defined labels and mismatch between the reference policy and existing few-shot examples limit interpretation. A larger independently labelled set and a consistent label policy are needed before assessing a revised classifier.
 
+## Completed milestone: targeted write-conflict protection
+
+[Pull request #10](https://github.com/Manahil-Iftikhar/collaborative-editing-system/pull/10) prevents duplicate snapshot numbers with a database constraint and returns HTTP 409 for conflicting writes. [Pull request #11](https://github.com/Manahil-Iftikhar/collaborative-editing-system/pull/11) requires the document revision on saves, rejects stale updates, and commits document content and change history in one transaction. The browser keeps an unsaved draft visible when a save conflicts.
+
+At source commit `deb291a092d10e51d9d5660698304e9ac96a930a`, [Java checks](https://github.com/Manahil-Iftikhar/collaborative-editing-system/actions/runs/36548713215) and [real-service HTTP/Chromium checks](https://github.com/Manahil-Iftikhar/collaborative-editing-system/actions/runs/36548713206) passed. The project now has 72 declared Java tests. Focused H2 tests force competing transactions and verify a single winning write without extra history or contribution records; HTTP checks verify revision preconditions, and Chromium checks verify draft preservation.
+
+This completes the targeted consistency milestone. Document saves and snapshots remain separate operations; snapshot revert does not update current document content. Automatic text merging, cross-service atomicity, production-database behavior and load capacity remain outside the verified scope. See the [architecture](https://github.com/Manahil-Iftikhar/collaborative-editing-system/blob/main/docs/ARCHITECTURE.md) and [API recovery instructions](https://github.com/Manahil-Iftikhar/collaborative-editing-system/blob/main/docs/API.md#document-revision-precondition).
+
 ## Next development milestones
 
 These are proposed priorities, with a concrete completion criterion for each.
 
 | Priority | Milestone | What completion means | Prerequisite |
 | --- | --- | --- | --- |
-| 1 | Strengthen Java consistency | Define save/snapshot and revert semantics; test concurrent writes and prevent conflicting version numbers | A documented consistency design |
-| 2 | Validate live YouTube search | Run a small, documented integration check with real provider responses and sanitized evidence | An owner-provided API key and available quota |
-| 3 | Prepare a deployment candidate | Establish persistent storage, restricted origins, protected service transport, dependency review and deployment checks for the selected application | A chosen deployment target and operational configuration |
+| 1 | Validate live YouTube search | Run a small, documented integration check with real provider responses and sanitized evidence | An owner-provided API key and available quota |
+| 2 | Prepare a deployment candidate | Establish persistent storage, restricted origins, protected service transport, dependency review and deployment checks for the selected application | A chosen deployment target and operational configuration |
 
 Browser verification is distinct from the existing HTTP smoke test. A model-backed run is distinct from offline tests using mocked retrieval or generation. A public deployment is a separate milestone from successful local execution.
 
